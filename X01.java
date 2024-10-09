@@ -8,56 +8,29 @@ public class X01 {
     private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        double hargabuku, total, i, transaksi;
+        double pALINGMURAH, hARGA, sUM;
 
-        total = 0;
-        hargabuku = Double.parseDouble(input.nextLine());
-        i = hargabuku;
-        while (hargabuku != 0) {
-            total = total + hargabuku;
-            if (i < hargabuku) {
-                i = i;
+        sUM = 0;
+        pALINGMURAH = 9999;
+        hARGA = Double.parseDouble(input.nextLine());
+        while (hARGA != 0) {
+            if (hARGA == 0) {
             } else {
-                i = hargabuku;
+                if (hARGA < pALINGMURAH) {
+                    pALINGMURAH = hARGA;
+                } else {
+                    hARGA = hARGA;
+                }
+                sUM = sUM + hARGA;
             }
-            hargabuku = Double.parseDouble(input.nextLine());
+            hARGA = Double.parseDouble(input.nextLine());
         }
-        if (total >= 100) {
-            transaksi = total - i;
+        if (sUM >= 100) {
+            sUM = sUM - pALINGMURAH;
         } else {
-            transaksi = transaksi;
+            sUM = sUM;
         }
-        System.out.println(transaksi);
-    }
-}
-import java.util.*;
-import java.lang.Math;
-
-public class X01 {
-    private static Scanner input = new Scanner(System.in);
-
-    public static void main(String[] args) {
-        double hargabuku, total, i, hasilakhir, hargaterkecil;
-
-        total = 0;
-        hargabuku = Double.parseDouble(input.nextLine());
-        i = hargabuku;
-        hargaterkecil = 9999;
-        while (hargabuku != 0) {
-            if (i < hargabuku) {
-                i = i;
-            } else {
-                i = hargabuku;
-            }
-            total = total + hargabuku;
-            hargabuku = Double.parseDouble(input.nextLine());
-        }
-        if (total >= 100) {
-            hasilakhir = total - i;
-        } else {
-            hasilakhir = hasilakhir;
-        }
-        System.out.println(toFixed(hasilakhir,2));
+        System.out.println(toFixed(sUM,2));
     }
     
     private static String toFixed(double value, int digits) {
