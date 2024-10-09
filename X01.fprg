@@ -2,21 +2,23 @@
 <flowgorithm fileversion="4.2">
     <attributes>
         <attribute name="name" value="X01"/>
-        <attribute name="authors" value="Angga Brillyant P S"/>
+        <attribute name="authors" value="Lenovo"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2024-10-09 04:45:17 PM"/>
-        <attribute name="created" value="QW5nZ2EgQnJpbGx5YW50IFAgUztOQVdUSEE7MjAyNC0xMC0wOTswMzowODoyNyBQTTszNDE1"/>
-        <attribute name="edited" value="QW5nZ2EgQnJpbGx5YW50IFAgUztOQVdUSEE7MjAyNC0xMC0wOTswNDo0NToxNyBQTTszOzM1MjY="/>
+        <attribute name="saved" value="2024-10-09 04:48:08 PM"/>
+        <attribute name="created" value="TGVub3ZvO0lPS0FQVVJCQTE5OzIwMjItMTEtMTA7MTE6MzE6NDUgQU07MjY1Ng=="/>
+        <attribute name="edited" value="TGVub3ZvO0lPS0FQVVJCQTE5OzIwMjItMTEtMTA7MTE6Mzg6NTAgQU07MTsyNzY3"/>
+        <attribute name="edited" value="QW5nZ2EgQnJpbGx5YW50IFAgUztOQVdUSEE7MjAyNC0xMC0wOTswNDo0ODowOCBQTTsxOzM1Mjc="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
-            <declare name="hargabuku, total, i, hasilakhir" type="Real" array="False" size=""/>
+            <declare name="hargabuku, total, i, transaksi" type="Real" array="False" size=""/>
             <assign variable="total" expression="0"/>
             <input variable="hargabuku"/>
             <assign variable="i" expression="hargabuku"/>
             <while expression="hargabuku != 0">
-                <if expression="i&lt;hargabuku">
+                <assign variable="total" expression="total + hargabuku"/>
+                <if expression="i &lt; hargabuku">
                     <then>
                         <assign variable="i" expression="i"/>
                     </then>
@@ -24,18 +26,17 @@
                         <assign variable="i" expression="hargabuku"/>
                     </else>
                 </if>
-                <assign variable="total" expression="total + hargabuku"/>
                 <input variable="hargabuku"/>
             </while>
-            <if expression="total&gt;=100">
+            <if expression="total &gt;= 100">
                 <then>
-                    <assign variable="hasilakhir" expression="total - i"/>
+                    <assign variable="transaksi" expression="total - i"/>
                 </then>
                 <else>
-                    <assign variable="hasilakhir" expression="hasilakhir"/>
+                    <assign variable="transaksi" expression="transaksi"/>
                 </else>
             </if>
-            <output expression="ToFixed(hasilakhir,2)" newline="True"/>
+            <output expression="transaksi" newline="True"/>
         </body>
     </function>
 </flowgorithm>
