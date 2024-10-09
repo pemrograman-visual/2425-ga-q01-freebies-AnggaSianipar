@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="X01"/>
+        <attribute name="authors" value="Angga Brillyant P S"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-09 04:29:42 PM"/>
+        <attribute name="created" value="QW5nZ2EgQnJpbGx5YW50IFAgUztOQVdUSEE7MjAyNC0xMC0wOTswMzowODoyNyBQTTszNDE1"/>
+        <attribute name="edited" value="QW5nZ2EgQnJpbGx5YW50IFAgUztOQVdUSEE7MjAyNC0xMC0wOTswNDoyOTo0MiBQTTsxOzM1MjQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="hargabuku, total, i, hasilakhir" type="Real" array="False" size=""/>
+            <assign variable="total" expression="0"/>
+            <input variable="hargabuku"/>
+            <assign variable="i" expression="hargabuku"/>
+            <while expression="hargabuku != 0">
+                <assign variable="total" expression="total + hargabuku"/>
+                <if expression="i&lt;hargabuku">
+                    <then>
+                        <assign variable="i" expression="i"/>
+                    </then>
+                    <else>
+                        <assign variable="i" expression="hargabuku"/>
+                    </else>
+                </if>
+                <input variable="hargabuku"/>
+            </while>
+            <if expression="total&gt;=100">
+                <then>
+                    <assign variable="hasilakhir" expression="total - i"/>
+                </then>
+                <else>
+                    <assign variable="hasilakhir" expression="hasilakhir"/>
+                </else>
+            </if>
+            <output expression="ToFixed(hasilakhir,2)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
