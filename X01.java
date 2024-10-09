@@ -4,7 +4,7 @@
 import java.util.*;
 import java.lang.Math;
 
-public class X01 {
+public class X01{
     private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -14,18 +14,18 @@ public class X01 {
         hargabuku = Double.parseDouble(input.nextLine());
         i = hargabuku;
         while (hargabuku != 0) {
-            total = total + hargabuku;
             if (i < hargabuku) {
                 i = i;
             } else {
                 i = hargabuku;
             }
+            total = total + hargabuku;
             hargabuku = Double.parseDouble(input.nextLine());
         }
         if (total >= 100) {
             hasilakhir = total - i;
         } else {
-            hasilakhir = "";
+            hasilakhir = hasilakhir;
         }
         System.out.println(toFixed(hasilakhir,2));
     }
@@ -34,3 +34,4 @@ public class X01 {
         return String.format("%." + digits + "f", value);
     }
 }
+

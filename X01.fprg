@@ -4,9 +4,9 @@
         <attribute name="name" value="X01"/>
         <attribute name="authors" value="Angga Brillyant P S"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2024-10-09 04:43:06 PM"/>
+        <attribute name="saved" value="2024-10-09 04:45:17 PM"/>
         <attribute name="created" value="QW5nZ2EgQnJpbGx5YW50IFAgUztOQVdUSEE7MjAyNC0xMC0wOTswMzowODoyNyBQTTszNDE1"/>
-        <attribute name="edited" value="QW5nZ2EgQnJpbGx5YW50IFAgUztOQVdUSEE7MjAyNC0xMC0wOTswNDo0MzowNiBQTTsyOzM1MjE="/>
+        <attribute name="edited" value="QW5nZ2EgQnJpbGx5YW50IFAgUztOQVdUSEE7MjAyNC0xMC0wOTswNDo0NToxNyBQTTszOzM1MjY="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -16,7 +16,6 @@
             <input variable="hargabuku"/>
             <assign variable="i" expression="hargabuku"/>
             <while expression="hargabuku != 0">
-                <assign variable="total" expression="total + hargabuku"/>
                 <if expression="i&lt;hargabuku">
                     <then>
                         <assign variable="i" expression="i"/>
@@ -25,6 +24,7 @@
                         <assign variable="i" expression="hargabuku"/>
                     </else>
                 </if>
+                <assign variable="total" expression="total + hargabuku"/>
                 <input variable="hargabuku"/>
             </while>
             <if expression="total&gt;=100">
@@ -32,7 +32,7 @@
                     <assign variable="hasilakhir" expression="total - i"/>
                 </then>
                 <else>
-                    <assign variable="hasilakhir" expression="&quot;&quot;"/>
+                    <assign variable="hasilakhir" expression="hasilakhir"/>
                 </else>
             </if>
             <output expression="ToFixed(hasilakhir,2)" newline="True"/>
