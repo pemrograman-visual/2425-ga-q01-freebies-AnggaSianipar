@@ -25,7 +25,7 @@ public class X01 {
         if (total >= 100) {
             hasilakhir = total - i;
         } else {
-            hasilakhir = hasilakhir;
+            hasilakhir = "";
         }
         System.out.println(toFixed(hasilakhir,2));
     }
